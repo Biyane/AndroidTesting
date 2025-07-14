@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.junit.ktx)
 
 
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -71,6 +72,8 @@ dependencies {
     testImplementation(libs.mockito.kotlin)
     // Optional -- Mockk framework
     testImplementation(libs.mockk)
+
+    testImplementation(libs.robolectric)
 
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
