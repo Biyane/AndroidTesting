@@ -1,7 +1,6 @@
 package kz.biyane.test
 
 import android.content.Intent
-import android.os.Build
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.myapplication2.MainActivity
@@ -9,21 +8,20 @@ import com.example.myapplication2.test.ActivityForTest.ActivityForTest
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.Robolectric
-import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.Shadows.shadowOf
-import kotlin.test.assertEquals
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.matcher.ViewMatchers.withId
 import org.robolectric.annotation.Config
-import java.util.regex.Pattern.matches
+import org.robolectric.annotation.Implementation
+import org.robolectric.annotation.Implements
+import org.robolectric.annotation.RealObject
+import org.robolectric.shadow.api.Shadow
+import kotlin.test.assertEquals
 
 
-@Config(
-    sdk = [Build.VERSION_CODES.TIRAMISU],
-    shadows = []
-)
 @RunWith(AndroidJUnit4::class)
+@Config(
+    shadows = [SomeTestShadow::class],
+)
 class FirstRobolectricTest {
 
     @Test
@@ -63,9 +61,48 @@ class FirstRobolectricTest {
 //        val factory = MyFragmentFactory()
 //        val scenario = FragmentScenario.launchFragmentInContainer<MyFragment>(arguments, factory)
 //        onView(withId(R.id.text)).check(matches(withText("Hello World!")))
+    }
 
-        SomeTest::class.simpleName
+    @Test
+    fun testingShadows() {
+        // Let Robolectric create or manage the instance if possible,
+        // or ensure it's created in an environment where Robolectric can intercept it.
+
+        // For classes you instantiate directly, you often don't call Shadows.shadowOf()
+        // on them directly unless they are framework classes.
+        // Instead, you interact with the real object, and your shadow's
+        // @Implementation methods will be invoked.
+
+        val someTest = SomeTest()
+
+        val shadowSomeTest = Shadow.extract(someTest) as SomeTestShadow
+
+        // Now you can call methods on your shadow:
+        shadowSomeTest.setMockName("Robolectric Test")
+        assertEquals("Robolectric Test", someTest.name) // Verify the shadow's @Implementation was called
+
     }
 }
 
-private class SomeTest
+private class SomeTest {
+    var name = "Kemel"
+}
+
+@Implements(SomeTest::class)
+private class SomeTestShadow {
+    @RealObject
+    lateinit var realObject: SomeTest
+
+    private var mockName = "DefaultMockName"
+
+    @Implementation
+    fun getName(): String = mockName
+
+    fun mockName() {
+
+    }
+
+    fun setMockName(name: String) {
+        mockName = name
+    }
+}

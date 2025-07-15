@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.junit.ktx)
 
 
     testImplementation(platform(libs.androidx.compose.bom))
@@ -62,6 +63,12 @@ dependencies {
     testImplementation(libs.androidx.junit.ktx)
     testImplementation(libs.androidx.espresso.core)
     testImplementation(libs.androidx.ui.test.junit4)
+
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.junit.ktx)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
 
     testImplementation(libs.junit)
     // Optional -- Robolectric environment
