@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MyApplication2"
 include(":app")
+include(":testing:instrumented")
