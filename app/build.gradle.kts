@@ -86,4 +86,30 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     testImplementation(kotlin("test"))
+
+    //    Most common used
+//        // Core library
+//        androidTestImplementation "androidx.test:core:$androidXTestVersion0"
+//
+//        // AndroidJUnitRunner and JUnit Rules
+//        androidTestImplementation "androidx.test:runner:$testRunnerVersion"
+//        androidTestImplementation "androidx.test:rules:$testRulesVersion"
+//
+//        // Assertions
+//        androidTestImplementation "androidx.test.ext:junit:$testJunitVersion"
+//        androidTestImplementation "androidx.test.ext:truth:$truthVersion"
+//
+//        // Espresso dependencies
+//        androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+//        androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
+//        androidTestImplementation "androidx.test.espresso:espresso-intents:$espressoVersion"
+//        androidTestImplementation "androidx.test.espresso:espresso-accessibility:$espressoVersion"
+//        androidTestImplementation "androidx.test.espresso:espresso-web:$espressoVersion"
+//        androidTestImplementation "androidx.test.espresso.idling:idling-concurrent:$espressoVersion"
+//
+//        // The following Espresso dependency can be either "implementation",
+//        // or "androidTestImplementation", depending on whether you want the
+//        // dependency to appear on your APK’"s compile classpath or the test APK
+//        // classpath.
+//        androidTestImplementation "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
 }

@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/testing" />
             <option value="$PROJECT_DIR$/testing/instrumented" />
+            <option value="$PROJECT_DIR$/testing/unit" />
           </set>
         </option>
       </GradleProjectSettings>

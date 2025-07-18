@@ -1,23 +1,25 @@
 [versions]
 agp = "8.12.0-alpha09"
-kotlin = "2.1.20"
+kotlin = "2.2.0"
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
-composeBom = "2024.09.00"
+composeBom = "2025.06.01"
 
 #new
-core = "1.7.0-beta01"
+core = "1.7.0-rc01"
 mockitoCore = "5.18.0"
 mockitoKotlin = "5.4.0"
 mockk = "1.14.4"
 robolectric = "4.15.1"
 junitKtx = "1.2.1"
-appcompat = "1.6.1"
-material = "1.10.0"
+appcompat = "1.7.1"
+material = "1.12.0"
+
+uiTestJunit4 = "1.8.3"
 
 
 
@@ -45,6 +47,7 @@ robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectr
 androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "uiTestJunit4" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
