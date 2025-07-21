@@ -2,11 +2,10 @@ package kz.biyane.room.first_page
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.Fts4
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Fts4
+//@Fts4
 @Entity(tableName = "user", indices = [Index(value = ["first_name", "last_name"])])
 class User(
     // if FTS used, @PrimaryKey @ColumnInfo(name = "rowid")  must use this type and column name

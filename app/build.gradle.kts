@@ -18,15 +18,59 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+//            buildConfigField()
+        }
+
+        debug {
+            isMinifyEnabled = false
+            versionNameSuffix = ".debug"
+            applicationIdSuffix = ".biyane"
+            isDebuggable = true
+
+            //            buildConfigField()
+
+        }
+
+        create("staging") {
+            isMinifyEnabled = false
+            isDebuggable = false
+            versionNameSuffix = ".staging"
         }
     }
+
+    flavorDimensions += listOf("environment", "testing")
+    productFlavors {
+        create("activ") {
+            dimension = "environment"
+        }
+
+        create("kcell") {
+            dimension = "testing"
+        }
+
+        create("Halyk") {
+            dimension = "environment"
+        }
+        create("Kaspi") {
+            dimension = "testing"
+        }
+    }
+
+    sourceSets {
+        getByName("activ") {
+            java.srcDir("src/activ/java")
+            res.srcDir("src/activ/src")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -86,6 +130,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     testImplementation(kotlin("test"))
+
+//    activImplementation("androidx.compose.ui:ui-test-junit4")
 
     //    Most common used
 //        // Core library

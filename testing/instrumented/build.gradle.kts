@@ -49,7 +49,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     androidTestImplementation("androidx.test:runner:1.6.2")
-    androidTestImplementation("androidx.test:rules:1.6.2")
+    androidTestImplementation(libs.androidx.rules)
     // Optional -- UI testing with Espresso
     androidTestImplementation(libs.androidx.espresso.core)
     // Optional -- UI testing with UI Automator

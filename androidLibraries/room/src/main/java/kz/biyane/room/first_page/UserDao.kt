@@ -38,20 +38,20 @@ interface UserDao {
     fun loadUsersFromRegions(regions: List<String>): List<User>
 
 
-    @Query(
-        "SELECT * FROM user" +
-                "JOIN book ON user.id = book.user_id"
-    )
-    fun loadUserAndBookNames(): Map<User, List<Book>>
-
-
-    @Query(
-        "SELECT * FROM book " +
-                "INNER JOIN loan ON loan.book_id = book.id " +
-                "INNER JOIN user ON user.id = loan.user_id " +
-                "WHERE user.name LIKE :userName"
-    )
-    fun findBooksBorrowedByNameSync(userName: String): List<Book>
+//    @Query(
+//        "SELECT * FROM user" +
+//                "JOIN book ON user.id = book.user_id"
+//    )
+//    fun loadUserAndBookNames(): Map<User, List<Book>>
+//
+//
+//    @Query(
+//        "SELECT * FROM book " +
+//                "INNER JOIN loan ON loan.book_id = book.id " +
+//                "INNER JOIN user ON user.id = loan.user_id " +
+//                "WHERE user.name LIKE :userName"
+//    )
+//    fun findBooksBorrowedByNameSync(userName: String): List<Book>
 
 
 }
