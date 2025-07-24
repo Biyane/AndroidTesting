@@ -63,4 +63,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     testImplementation(kotlin("test"))
+
+    testImplementation("app.cash.turbine:turbine:1.2.1")
+
 }
