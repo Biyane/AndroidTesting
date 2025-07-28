@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/androidLibraries" />
             <option value="$PROJECT_DIR$/androidLibraries/room" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/programming" />
+            <option value="$PROJECT_DIR$/programming/concurrency" />
             <option value="$PROJECT_DIR$/testing" />
             <option value="$PROJECT_DIR$/testing/instrumented" />
             <option value="$PROJECT_DIR$/testing/unit" />

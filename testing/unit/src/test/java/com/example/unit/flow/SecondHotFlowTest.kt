@@ -35,7 +35,7 @@ class SecondHotFlowTest {
 
         val viewModel = FlowViewModel(repository)
 
-        backgroundScope.launch(UnconfinedTestDispatcher()) {
+        launch(testScheduler) {
             viewModel.stateInScore.collect {
 
             }
