@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/programming" />
             <option value="$PROJECT_DIR$/programming/concurrency" />
             <option value="$PROJECT_DIR$/testing" />
+            <option value="$PROJECT_DIR$/testing/espresso" />
             <option value="$PROJECT_DIR$/testing/instrumented" />
             <option value="$PROJECT_DIR$/testing/unit" />
           </set>
