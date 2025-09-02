@@ -30,6 +30,13 @@ jobs:
       - name: Build project
         run: ./gradlew assembleDebug
 
+      - name: Debug info
+        run: echo " The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      - name: List files
+        run: |
+          ls ${{ github.workspace }} 
+
   test:
     runs-on: ubuntu-latest
     needs: build  # This job depends on build job
